@@ -1,0 +1,22 @@
+.toast-message {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%) translateY(24px);
+  background: rgba(12, 18, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  color: #fff;
+  padding: 0.95rem 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.toast-message.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
