@@ -1,0 +1,268 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --surface: rgba(20, 30, 50, 0.95);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --text: #edf2ff;
+  --text-muted: #9bb0d6;
+  --accent: #7c5cff;
+  --accent-soft: rgba(124, 92, 255, 0.18);
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 35px 120px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.24), transparent 24%),
+    radial-gradient(circle at right, rgba(0, 214, 255, 0.18), transparent 18%),
+    linear-gradient(180deg, #0e172a 0%, #090d16 100%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.page-shell {
+  width: min(100%, 520px);
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px);
+}
+
+.glass-card::before,
+.glass-card::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.glass-card::before {
+  width: 220px;
+  height: 220px;
+  background: rgba(124, 92, 255, 0.55);
+  top: -70px;
+  right: -90px;
+}
+
+.glass-card::after {
+  width: 160px;
+  height: 160px;
+  background: rgba(0, 214, 255, 0.26);
+  bottom: -60px;
+  left: -60px;
+}
+
+.brand-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.9), rgba(0, 214, 255, 0.7));
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+}
+
+p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.login-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: grid;
+  gap: 0.65rem;
+}
+
+label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: rgba(124, 92, 255, 0.85);
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.14);
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field button {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.button {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.95), rgba(0, 214, 255, 0.9));
+  color: #fff;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--text);
+}
+
+.divider {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.signup-text {
+  margin: 1rem 0 0;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.signup-text a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 1.5rem;
+  }
+}
+
+.toast-message {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%) translateY(24px);
+  background: rgba(12, 18, 33, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  color: #fff;
+  padding: 0.95rem 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.toast-message.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
